@@ -1,4 +1,4 @@
-def grading_function(body: dict) -> dict:
+def grading_function(response, answer, params) -> dict:
     """
     Function used to grade a student response.
     ---
@@ -24,7 +24,7 @@ def grading_function(body: dict) -> dict:
 
     # Safely try to parse answer and response into symbolic expressions
     try:
-        res = parse_expr(body["response"])
+        res = parse_expr(response)
     except SyntaxError as e:
         return {
             "error": {
@@ -45,7 +45,7 @@ def grading_function(body: dict) -> dict:
         }
 
     try:
-        ans = parse_expr(body["answer"])
+        ans = parse_expr(answer)
     except SyntaxError as e:
         return {
             "error": {
