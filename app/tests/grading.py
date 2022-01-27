@@ -21,7 +21,7 @@ class TestGradingFunction(unittest.TestCase):
         as it should.
     """
     def test_returns_is_correct_true(self):
-        response, answer, params = None, None, dict()
+        response, answer, params = "a", "a", dict()
         result = grading_function(response, answer, params)
         
         self.assertEqual(result.get("is_correct"), True)
