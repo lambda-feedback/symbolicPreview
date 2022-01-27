@@ -68,7 +68,7 @@ def grading_function(response, answer, params) -> dict:
         }
 
     # Add how res was interpreted to the response
-    interp = {"response_latex": latex(res)}
+    interp = "test text"#{"response_latex": latex(res)}
 
     # Going from the simplest to complex tranformations available in sympy, check equality
     # https://github.com/sympy/sympy/wiki/Faq#why-does-sympy-say-that-two-equal-expressions-are-unequal
