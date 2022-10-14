@@ -28,7 +28,7 @@ class TestEvaluationFunction(unittest.TestCase):
         response, answer, params = "sqrt(a/b)", None, dict()
         result = evaluation_function(response, answer, params)
         
-        self.assertEqual(result.get("latex"), "$$\\sqrt{\\frac{a}{b}}$$")
+        self.assertEqual(result.get("response_latex"), "$$\\sqrt{\\frac{a}{b}}$$")
 
 if __name__ == "__main__":
     unittest.main()

@@ -25,5 +25,5 @@ def evaluation_function(response, answer, params):
     """
 
     return {
-        "latex": py2tex(response)
+        "response_latex": py2tex(response)
     }
