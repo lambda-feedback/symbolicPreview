@@ -1,8 +1,11 @@
 import unittest
 
-from ..algorithm import grading_function
+try:
+    from .evaluation import evaluation_function
+except ImportError:
+    from evaluation import evaluation_function
 
-class TestGradingFunction(unittest.TestCase):
+class TestEvaluationFunction(unittest.TestCase):
     """
         TestCase Class used to test the algorithm.
         ---
@@ -17,14 +20,15 @@ class TestGradingFunction(unittest.TestCase):
         Read the docs on how to use unittest here:
         https://docs.python.org/3/library/unittest.html
 
-        Use grading_function() to check your algorithm works 
+        Use evaluation_function() to check your algorithm works 
         as it should.
     """
-    def test_returns_is_correct_true(self):
-        response, answer, params = "a", "a", dict()
-        result = grading_function(response, answer, params)
         
-        self.assertEqual(result.get("is_correct"), True)
+    def test_returns_root_a_b(self):
+        response, answer, params = "sqrt(a/b)", None, dict()
+        result = evaluation_function(response, answer, params)
+        
+        self.assertEqual(result.get("latex"), "$$\\sqrt{\\frac{a}{b}}$$")
 
 if __name__ == "__main__":
     unittest.main()
